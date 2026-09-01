@@ -176,3 +176,13 @@ li {
     padding-top: 78px;
   }
 }
+.site-nav {
+  background: transparent !important;
+  backdrop-filter: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+body,
+body * {
+  cursor: url("{{ '/cursor.png' | relative_url }}") 16 16, auto !important;
+}
