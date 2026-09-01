@@ -195,53 +195,49 @@ button,
 input {
   cursor: url("{{ '/cursor.png' | relative_url }}") 16 16, auto !important;
 }
-/* All regular page content */
+/* Clean stretched Times New Roman page text */
 #main_content > :not(.site-nav) {
   font-family: "Times New Roman", Times, serif !important;
-  color: #f5eee8 !important;
+  color: #f5f2ed !important;
 
   font-size: clamp(1.15rem, 2vw, 1.5rem);
-  line-height: 1.5;
-  letter-spacing: 0.035em;
+  line-height: 1.55;
+  letter-spacing: 0.075em;
 
-  -webkit-text-stroke: 0.45px black;
+  -webkit-text-stroke: 0.5px black;
 
   text-shadow:
+    1px 1px 0 black,
     -1px -1px 0 black,
-     1px -1px 0 black,
-    -1px  1px 0 black,
-     1px  1px 0 black,
-     0 0 8px rgba(190, 0, 0, 0.9),
-     0 0 18px rgba(100, 0, 0, 0.7);
+    0 0 8px rgba(0, 0, 0, 0.95),
+    0 0 18px rgba(0, 0, 0, 0.65);
 }
 
-/* Page and section titles */
+/* Larger, more stretched headings */
 #main_content > h1,
 #main_content > h2,
 #main_content > h3 {
-  color: black !important;
-  font-weight: bold;
-  letter-spacing: 0.08em;
+  font-family: "Times New Roman", Times, serif !important;
+  color: #f5f2ed !important;
+  font-weight: 400;
 
-  -webkit-text-stroke: 1.25px #ed0000;
+  letter-spacing: 0.14em;
+  -webkit-text-stroke: 0.7px black;
 
   text-shadow:
-    0 0 5px #ff0000,
-    0 0 14px rgba(255, 0, 0, 0.85),
-    3px 3px 0 rgba(0, 0, 0, 0.9);
+    2px 2px 0 black,
+    0 0 10px rgba(0, 0, 0, 0.95);
 }
 
-/* Automatically decorate major titles */
-#main_content > h1::before,
-#main_content > h1::after {
-  content: " ⟡ ";
-  color: #ed0000;
-  -webkit-text-stroke: 0.5px black;
+/* Remove the decorative symbols */
+#main_content h1::before,
+#main_content h1::after {
+  content: none !important;
 }
 
-/* Links inside page content */
+/* Simple readable links */
 #main_content > :not(.site-nav) a {
-  color: #ff3b3b !important;
-  text-decoration: none;
-  border-bottom: 1px solid #ff3b3b;
+  color: #f5f2ed !important;
+  text-decoration: underline;
+  border: none;
 }
