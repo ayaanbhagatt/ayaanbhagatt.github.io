@@ -193,5 +193,5 @@ a,
 a:hover,
 button,
 input {
-  cursor: url("{{ '/assets/images/cursor.png' | relative_url }}") 16 16, auto !important;
+  cursor: url("{{ '/cursor.png' | relative_url }}") 16 16, auto !important;
 }
