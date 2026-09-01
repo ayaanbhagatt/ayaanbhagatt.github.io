@@ -149,3 +149,30 @@ li {
   box-shadow: none !important;
   color: black !important;
 }
+@media screen and (max-width: 600px) {
+  .site-nav {
+    height: 58px;
+    width: 100vw;
+    padding: 0 8px;
+    box-sizing: border-box;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .site-nav a {
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    letter-spacing: 0 !important;
+    white-space: nowrap;
+
+    color: black !important;
+    -webkit-text-stroke: 0.55px red !important;
+    text-shadow: none !important;
+
+    background: transparent !important;
+  }
+
+  #main_content {
+    padding-top: 78px;
+  }
+}
