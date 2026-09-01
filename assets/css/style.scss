@@ -40,3 +40,62 @@ header,
 #main_content {
   background: transparent;
 }
+/* Remove the theme's white panels */
+.wrapper,
+.container,
+.inner,
+.outer,
+.page-header,
+.main-content,
+#header_wrap,
+#main_content_wrap,
+#footer_wrap,
+#main_content,
+header,
+main,
+section,
+footer {
+  background: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+/* Full-screen background */
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.65)),
+    url("{{ '/IMG_1589.jpeg' | relative_url }}")
+    center center / cover no-repeat fixed !important;
+
+  color: white !important;
+}
+
+/* Make all main text visible */
+h1,
+h2,
+h3,
+h4,
+p,
+li,
+footer,
+footer p {
+  color: white !important;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.65);
+}
+
+/* Remove the restricted white-page width */
+.wrapper,
+.container,
+.inner,
+.main-content,
+#main_content {
+  width: auto !important;
+  max-width: none !important;
+}
