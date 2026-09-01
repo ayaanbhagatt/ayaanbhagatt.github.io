@@ -1,0 +1,42 @@
+---
+---
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono&family=Space+Grotesk:wght@400;600;700&display=swap");
+@import "{{ site.theme }}";
+
+/* Full-page background */
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.72)),
+    url("{{ '/assets/images/background.jpg' | relative_url }}")
+    center / cover no-repeat fixed;
+
+  color: white;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+/* Selected heading font */
+h1,
+h2,
+h3,
+h4 {
+  font-family: "DM Mono", monospace;
+}
+
+/* Remove the generated “ayaan” heading */
+header h1 {
+  display: none;
+}
+
+/* Make theme sections reveal the background */
+header,
+.container,
+#main_content_wrap,
+#main_content {
+  background: transparent;
+}
