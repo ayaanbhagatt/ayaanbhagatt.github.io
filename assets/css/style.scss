@@ -52,3 +52,8 @@ h3,
 h4 {
   font-family: "DM Mono", monospace;
 }
+/* Remove the entire Hacker theme header:
+   GitHub button, title area, and green line */
+header {
+  display: none !important;
+}
