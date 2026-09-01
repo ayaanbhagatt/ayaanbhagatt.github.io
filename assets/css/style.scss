@@ -120,3 +120,32 @@ li {
 .site-nav a:hover {
   background: rgba(255, 255, 255, 0.18);
 }
+.site-nav a {
+  display: inline-block !important;
+  justify-self: center;
+  align-self: center;
+
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+
+  color: black !important;
+  -webkit-text-stroke: 1.5px red;
+
+  text-shadow:
+    -1px -1px 0 red,
+     1px -1px 0 red,
+    -1px  1px 0 red,
+     1px  1px 0 red;
+}
+
+.site-nav a:hover,
+.site-nav a:focus,
+.site-nav a:active {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  color: black !important;
+}
