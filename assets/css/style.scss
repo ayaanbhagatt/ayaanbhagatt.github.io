@@ -14,7 +14,7 @@ body {
 body {
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.65)),
-    url("{{ '/Unknown.jpg' | relative_url }}") !important;
+    url("{{ '/Unknown-2.jpg' | relative_url }}") !important;
 
   background-size: cover !important;
   background-position: center !important;
@@ -184,7 +184,7 @@ li {
 }
 body,
 body * {
-  cursor: url("{{ '/cursor.png' | relative_url }}") 16 16, auto !important;
+  cursor: url("{{ '/cursor1.png' | relative_url }}") 16 16, auto !important;
 }
 html,
 body,
@@ -193,7 +193,7 @@ a,
 a:hover,
 button,
 input {
-  cursor: url("{{ '/cursor.png' | relative_url }}") 16 16, auto !important;
+  cursor: url("{{ '/cursor1.png' | relative_url }}") 16 16, auto !important;
 }
 /* Clean stretched Times New Roman page text */
 #main_content > :not(.site-nav) {
