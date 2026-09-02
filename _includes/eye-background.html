@@ -1,0 +1,40 @@
+<div id="eye-stage" aria-hidden="true">
+  <img
+    id="eye-base"
+    class="art-layer base-layer"
+    src="{{ '/base.jpg' | relative_url }}"
+    alt=""
+  >
+
+  <!-- Replace x/y with each eye center in the original base image -->
+  <div
+    class="tracked-eye"
+    data-x="780"
+    data-y="350"
+    data-size="55"
+    data-travel="10"
+  >
+    <img src="{{ '/left-pupil.png' | relative_url }}" alt="">
+  </div>
+
+  <div
+    class="tracked-eye"
+    data-x="1110"
+    data-y="350"
+    data-size="55"
+    data-travel="10"
+  >
+    <img src="{{ '/right-pupil.png' | relative_url }}" alt="">
+  </div>
+
+  <img
+    class="art-layer foreground-layer"
+    src="{{ '/foreground.png' | relative_url }}"
+    alt=""
+  >
+</div>
+
+<script
+  src="{{ '/assets/js/eyes.js' | relative_url }}"
+  defer>
+</script>
