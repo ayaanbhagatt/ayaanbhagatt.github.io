@@ -309,4 +309,29 @@ body > .container {
 #eye-stage.ready .tracked-eye {
   opacity: 1;
 }
+/* Red navigation text with black outline */
+.site-nav a,
+.site-nav a:visited,
+.site-nav a:hover,
+.site-nav a:focus,
+.site-nav a:active {
+  color: #ed0000 !important;
+  -webkit-text-stroke: 1.4px black !important;
 
+  text-shadow:
+    -1px -1px 0 black,
+     1px -1px 0 black,
+    -1px  1px 0 black,
+     1px  1px 0 black !important;
+
+  background: transparent !important;
+}
+
+/* Thinner outline so mobile text stays readable */
+@media screen and (max-width: 600px) {
+  .site-nav a {
+    color: #ed0000 !important;
+    -webkit-text-stroke: 0.7px black !important;
+    text-shadow: none !important;
+  }
+}
