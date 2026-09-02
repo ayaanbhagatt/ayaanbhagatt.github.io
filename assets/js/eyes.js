@@ -52,17 +52,37 @@ document.addEventListener("DOMContentLoaded", () => {
     const viewportWidth = window.innerWidth;
     const viewportHeight = window.innerHeight;
 
-    const scale = Math.max(
-      viewportWidth / base.naturalWidth,
-      viewportHeight / base.naturalHeight
-    );
-
-    const renderedWidth = base.naturalWidth * scale;
-    const renderedHeight = base.naturalHeight * scale;
-
-    const offsetX = (viewportWidth - renderedWidth) / 2;
-    const offsetY = (viewportHeight - renderedHeight) / 2;
-
+  /* Keep the average eye line 165px from the top on every screen */
+  const sourceEyeLineY =
+    eyes.reduce((total, eye) => total + eye.sourceY, 0) /
+    eyes.length;
+  
+  const targetEyeLineY = 165;
+  
+  const scale = Math.max(
+    viewportWidth / base.naturalWidth,
+    viewportHeight / base.naturalHeight,
+  
+    /* Ensure the artwork still covers above and below the fixed eye line */
+    targetEyeLineY / sourceEyeLineY,
+    (viewportHeight - targetEyeLineY) /
+      (base.naturalHeight - sourceEyeLineY)
+  );
+  
+  const renderedWidth = base.naturalWidth * scale;
+  const renderedHeight = base.naturalHeight * scale;
+  
+  const offsetX = (viewportWidth - renderedWidth) / 2;
+  const offsetY =
+    targetEyeLineY - sourceEyeLineY * scale;
+  
+  /* Position both large artwork layers using the same calculation */
+  document.querySelectorAll(".art-layer").forEach((layer) => {
+    layer.style.left = `${offsetX}px`;
+    layer.style.top = `${offsetY}px`;
+    layer.style.width = `${renderedWidth}px`;
+    layer.style.height = `${renderedHeight}px`;
+  });
     eyes.forEach((eye) => {
       eye.centerX = offsetX + eye.sourceX * scale;
       eye.centerY = offsetY + eye.sourceY * scale;
