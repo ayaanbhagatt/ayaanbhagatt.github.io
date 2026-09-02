@@ -7,4 +7,7 @@ permalink: /
 {% include navigation.html %}
 {% include eye-background.html %}
 
-jarhead
+ayaan bhagat
+
+
+tech music design
