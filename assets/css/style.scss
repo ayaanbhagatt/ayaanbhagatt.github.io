@@ -300,3 +300,13 @@ body > .container {
   object-fit: contain;
   will-change: transform;
 }
+/* Hide pupils until JavaScript has positioned them */
+.tracked-eye {
+  opacity: 0;
+}
+
+/* Reveal pupils once positioning is complete */
+#eye-stage.ready .tracked-eye {
+  opacity: 1;
+}
+
