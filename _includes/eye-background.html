@@ -2,7 +2,7 @@
   <img
     id="eye-base"
     class="art-layer base-layer"
-    src="{{ '/background.jpg' | relative_url }}"
+    src="{{ '/base.jpg' | relative_url }}"
     alt=""
   >
 
@@ -34,14 +34,7 @@
 </div>
 
 <!-- FOREGROUND TOGGLE START -->
-<button
-  id="foreground-toggle"
-  type="button"
-  aria-label="Toggle foreground artwork"
-  aria-pressed="false"
->
-  FG+
-</button>
+<div id="foreground-toggle-wrapper"><button id="foreground-toggle" type="button" aria-label="Toggle foreground artwork" aria-pressed="false">FG+</button></div>
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
