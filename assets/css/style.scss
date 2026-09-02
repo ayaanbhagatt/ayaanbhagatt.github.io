@@ -335,3 +335,36 @@ body > .container {
     text-shadow: none !important;
   }
 }
+/* FOREGROUND TOGGLE START — delete this block to remove the feature */
+
+.foreground-layer {
+  opacity: 0; /* Hidden by default */
+  transition: opacity 0.25s ease;
+}
+
+.foreground-layer.foreground-visible {
+  opacity: 1;
+}
+
+#foreground-toggle {
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  z-index: 10001;
+
+  width: 40px;
+  height: 30px;
+  padding: 0;
+
+  background: black;
+  color: #ed0000;
+  border: 1px solid #ed0000;
+  font: bold 13px "Times New Roman", Times, serif;
+  cursor: pointer;
+}
+
+#foreground-toggle:hover {
+  color: white;
+}
+
+/* FOREGROUND TOGGLE END */
