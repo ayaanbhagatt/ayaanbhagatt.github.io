@@ -387,3 +387,8 @@ body > .container {
 .scroll-gap {
   height: 100vh;
 }
+.small-image {
+  width: 300px !important;
+  max-width: 100% !important;
+  height: auto !important;
+}
