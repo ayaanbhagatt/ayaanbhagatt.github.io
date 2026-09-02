@@ -66,6 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
       eye.element.style.height = `${displayedSize}px`;
     });
 
+    stage.classList.add("ready");
     aimEyes();
   }
 
