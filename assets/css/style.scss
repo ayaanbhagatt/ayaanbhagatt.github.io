@@ -366,5 +366,21 @@ body > .container {
 #foreground-toggle:hover {
   color: white;
 }
+/* Allow page content to scroll */
+html,
+body {
+  height: auto !important;
+  min-height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto !important;
+}
+
+body > .container {
+  min-height: 100vh;
+}
+
+#main_content {
+  padding-bottom: 150px;
+}
 
 /* FOREGROUND TOGGLE END */
