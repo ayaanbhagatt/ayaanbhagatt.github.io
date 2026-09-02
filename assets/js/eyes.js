@@ -49,8 +49,8 @@ document.addEventListener("DOMContentLoaded", () => {
   function positionEyes() {
     if (!base.naturalWidth || !base.naturalHeight) return;
 
-    const viewportWidth = stage.clientWidth;
-    const viewportHeight = stage.clientHeight;
+    const viewportWidth = window.innerWidth;
+    const viewportHeight = window.innerHeight;
 
     const scale = Math.max(
       viewportWidth / base.naturalWidth,
@@ -149,11 +149,14 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("blur", centerEyes);
   window.addEventListener("resize", positionEyes);
 
-  if (base.complete) {
-    positionEyes();
+  if (base.complete && base.naturalWidth) {
+    requestAnimationFrame(positionEyes);
   } else {
-    base.addEventListener("load", positionEyes);
+    base.addEventListener("load", () => {
+      requestAnimationFrame(positionEyes);
+    });
   }
+  
 
   requestAnimationFrame(animate);
 });
