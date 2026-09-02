@@ -2,7 +2,7 @@
   <img
     id="eye-base"
     class="art-layer base-layer"
-    src="{{ '/base.jpg' | relative_url }}"
+    src="{{ '/background.jpg' | relative_url }}"
     alt=""
   >
 
@@ -32,7 +32,8 @@
     alt=""
   >
 </div>
-<!-- FOREGROUND TOGGLE START — delete this block to remove the feature -->
+
+<!-- FOREGROUND TOGGLE START -->
 <button
   id="foreground-toggle"
   type="button"
@@ -43,21 +44,23 @@
 </button>
 
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const button = document.querySelector("#foreground-toggle");
-    const foreground = document.querySelector(".foreground-layer");
+document.addEventListener("DOMContentLoaded", function () {
+  const button = document.getElementById("foreground-toggle");
+  const foreground = document.querySelector(".foreground-layer");
 
-    if (!button || !foreground) return;
+  if (!button || !foreground) return;
 
-    button.addEventListener("click", () => {
-      const visible = foreground.classList.toggle("foreground-visible");
+  button.addEventListener("click", function () {
+    const visible =
+      foreground.classList.toggle("foreground-visible");
 
-      button.textContent = visible ? "FG−" : "FG+";
-      button.setAttribute("aria-pressed", visible);
-    });
+    button.textContent = visible ? "FG-" : "FG+";
+    button.setAttribute("aria-pressed", String(visible));
   });
+});
 </script>
 <!-- FOREGROUND TOGGLE END -->
+
 <script
   src="{{ '/assets/js/eyes.js' | relative_url }}"
   defer>
