@@ -37,28 +37,45 @@
 <div id="foreground-toggle-wrapper"><button id="foreground-toggle" type="button" aria-label="Toggle foreground artwork" aria-pressed="false">FG+</button></div>
 
 <script>
-document.addEventListener("DOMContentLoaded", function () {
+(function () {
   const button = document.getElementById("foreground-toggle");
   const foreground = document.querySelector(".foreground-layer");
   const storageKey = "foreground-visible";
 
   if (!button || !foreground) return;
 
-  function setForeground(visible) {
+  function readSavedState() {
+    return localStorage.getItem(storageKey) === "true";
+  }
+
+  function displayForeground(visible) {
     foreground.classList.toggle("foreground-visible", visible);
     button.textContent = visible ? "FG-" : "FG+";
     button.setAttribute("aria-pressed", String(visible));
   }
 
-  let visible = localStorage.getItem(storageKey) === "true";
-  setForeground(visible);
+  /* Apply saved setting immediately */
+  displayForeground(readSavedState());
 
   button.addEventListener("click", function () {
-    visible = !visible;
+    const visible = !readSavedState();
+
     localStorage.setItem(storageKey, String(visible));
-    setForeground(visible);
+    displayForeground(visible);
   });
-});
+
+  /* Reapply when Safari restores a previously visited page */
+  window.addEventListener("pageshow", function () {
+    displayForeground(readSavedState());
+  });
+
+  /* Keep multiple open tabs synchronized */
+  window.addEventListener("storage", function (event) {
+    if (event.key === storageKey) {
+      displayForeground(readSavedState());
+    }
+  });
+})();
 </script>
 <!-- FOREGROUND TOGGLE END -->
 
