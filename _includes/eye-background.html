@@ -40,15 +40,23 @@
 document.addEventListener("DOMContentLoaded", function () {
   const button = document.getElementById("foreground-toggle");
   const foreground = document.querySelector(".foreground-layer");
+  const storageKey = "foreground-visible";
 
   if (!button || !foreground) return;
 
-  button.addEventListener("click", function () {
-    const visible =
-      foreground.classList.toggle("foreground-visible");
-
+  function setForeground(visible) {
+    foreground.classList.toggle("foreground-visible", visible);
     button.textContent = visible ? "FG-" : "FG+";
     button.setAttribute("aria-pressed", String(visible));
+  }
+
+  let visible = localStorage.getItem(storageKey) === "true";
+  setForeground(visible);
+
+  button.addEventListener("click", function () {
+    visible = !visible;
+    localStorage.setItem(storageKey, String(visible));
+    setForeground(visible);
   });
 });
 </script>
