@@ -184,7 +184,7 @@ li {
 }
 body,
 body * {
-  cursor: url("{{ '/cursor1.png' | relative_url }}") 16 16, auto !important;
+  cursor: url("{{ '/cursor.png' | relative_url }}") 16 16, auto !important;
 }
 html,
 body,
@@ -193,7 +193,7 @@ a,
 a:hover,
 button,
 input {
-  cursor: url("{{ '/cursor1.png' | relative_url }}") 16 16, auto !important;
+  cursor: url("{{ '/cursor.png' | relative_url }}") 16 16, auto !important;
 }
 /* Clean stretched Times New Roman page text */
 #main_content > :not(.site-nav) {
