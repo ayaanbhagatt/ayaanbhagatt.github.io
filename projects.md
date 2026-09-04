@@ -7,5 +7,5 @@ permalink: /projects/
 {% include eye-background.html %}
 # projects
 
-## cardboard Boxes
-one sec
+## [cardboard boxes]({{ '/projects/cardboard-boxes/' | relative_url }})
+click that please
