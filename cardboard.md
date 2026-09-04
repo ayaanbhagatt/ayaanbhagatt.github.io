@@ -17,6 +17,6 @@ here's what i came up with
 
 ##1 - Amp Pad
 
-![]({{ '/IMG_1621(1).HEIC' | relative_url }}){: .small-image }
+![]({{ '/IMG_1621(1).jpg' | relative_url }}){: .small-image }
 
 My cousin plays guitar often in his garage or other dusty spaces. The amp pad solves this, protecting expensive equipment from the floor.
