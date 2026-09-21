@@ -7,7 +7,7 @@ permalink: /arduinoproject/
 
 ## process
 
-For this project, I wanted to build on my knowledge of synthesizers and drum machines. I had already worked with passive buzzers and knew how to use `tone()` to make different pitches, so I wanted to go beyond just playing individual notes and make something that could be used as an actual instrument.
+For this project, I wanted to build on my knowledge of synthesizers and drum machines. I had already worked with passive buzzers and knew how to use tone() to make different pitches, so I wanted to go beyond just playing individual notes and make something that could be used as an actual instrument.
 
 My final device is an Arduino controlled **arpeggiator**. A joystick chooses chords and key, an ultrasonic sensor changes the speed of the arpeggio, a rotary encoder changes the pattern, with four passive buzzers playing the notes.
 
@@ -15,11 +15,11 @@ My final device is an Arduino controlled **arpeggiator**. A joystick chooses cho
 
 ## rotary encoder
 
-The main new component I added was a **rotary encoder**. At first I thought it was a potentiometer because it looked like a knob, but I noticed that it had pins labeled `CLK`, `DT`, `SW`, `+5V`, and `GND`, and that it clicked into steps when I turned it.
+The main new component I added was a **rotary encoder**. At first I thought it was a potentiometer because it looked like a knob, but I noticed that it had pins labeled CLK, DT, SW, +5V, and GND, and that it clicked into steps when I turned it.
 
-I learned that unlike a potentiometer, a rotary encoder does not give one analog voltage based on its position. Instead, the `CLK` and `DT` pins send digital pulses in slightly different sequences. The Arduino can compare those signals to tell whether I turned the knob clockwise or counterclockwise.
+I learned that unlike a potentiometer, a rotary encoder does not give one analog voltage based on its position. Instead, the CLK and DT pins send digital pulses in slightly different sequences. The Arduino can compare those signals to tell whether I turned the knob clockwise or counterclockwise.
 
-I used the **How To Mechatronics rotary encoder Arduino tutorial** and information from the **KY-040 Rotary Encoder documentation** to fully understand how it works.
+I used the How To Mechatronics rotary encoder Arduino tutorial and information from the KY-040 Rotary Encoder documentation to fully understand how it works.
 
 ---
 
@@ -51,7 +51,7 @@ It technically worked, but it sounded strange and messy because the passive buzz
 
 I also originally made the ultrasonic sensor directly affect the chords and later tried making it control volume. Neither worked very well. Small changes in ultrasonic readings caused unpredictable changes, and changing the buzzer volume did not create much of a noticeable effect.
 
-Instead, I changed the design so the notes were **arpeggiated**, meaning the notes of the chord play one after another.
+Instead, I changed the design so the notes were arpeggiated meaning the notes of the chord play one after another.
 
 This sounded much cleaner.
 
@@ -146,7 +146,7 @@ If they are in the opposite relationship, it moves backward.
 
 The physical clicks I feel while turning the knob are called detents.
 
-The rotary encoder also includes a pushbutton, which is why it has an `SW` pin.
+The rotary encoder also includes a pushbutton, which is why it has an SW pin.
 
 Another important issue with mechanical controls is debouncing. The metal contacts can rapidly switch between HIGH and LOW for a few milliseconds when they touch. My program ignores changes that happen too close together so one physical movement is less likely to be counted multiple times.
 
@@ -186,5 +186,5 @@ The skill I would rely on most if I continued developing this project would debu
 
 Most of my problems were physical sensors giving noisy or unexpected values.
 
-Learning to use the Serial Monitor, adjust thresholds, smooth sensor readings, and denounce buttons helped me make genuinely responsive controls.
+Learning to use the Serial Monitor, adjust thresholds and artificially smooth sensor readings helped me make responsive controls.
 
