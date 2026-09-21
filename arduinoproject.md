@@ -1,9 +1,7 @@
 ---
-
-layout: page
-title: Arduino Gesture-Controlled Arpeggiator
-permalink: /arduino_project/
-----------------------------
+layout: default
+permalink: /arduinoproject/
+---
 
 # arduino gesture controlled arpeggiator
 
