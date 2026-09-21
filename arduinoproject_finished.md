@@ -1,6 +1,6 @@
 ---
 layout: default
-permalink: /arduinoproject/
+permalink: /arduinoprojecto/
 ---
 
 # arduino gesture controlled arpeggiator
@@ -11,7 +11,7 @@ For this project, I wanted to build on my knowledge of synthesizers and drum mac
 
 My final device is an Arduino controlled arpeggiator. A joystick chooses chords and key, an ultrasonic sensor changes the speed of the arpeggio, a rotary encoder changes the pattern, with four passive buzzers playing the notes.
 
-![final circuit](images/arduino-circuit.jpg)
+![final circuit](arduino-circuit.jpg)
 
 
 ## rotary encoder
@@ -22,7 +22,7 @@ I learned that unlike a potentiometer, a rotary encoder does not give one analog
 
 I used the How To Mechatronics rotary encoder Arduino tutorial and information from the KY-040 Rotary Encoder documentation to fully understand how it works.
 
-![rotary encoder](images/rotary-encoder.jpg)
+![rotary encoder](rotary-encoder.jpg)
 
 
 ## starting
@@ -61,7 +61,7 @@ I then gave the ultrasonic sensor the job of controlling how quickly the arpeggi
 A hand close to the sensor makes the notes play quickly, while moving farther away slows them down.
 
 <video controls width="700">
-  <source src="videos/arduino-demo.mp4" type="video/mp4">
+  <source src="arduino-demo.mp4" type="video/mp4">
 </video>
 
 
@@ -132,7 +132,7 @@ The program stores these four frequencies, and then the selected arpeggio patter
 
 ## code
 
-[download the full arduino code](arduino_project_code.zip)
+[download the code](arduino_project_code.zip)
 
 # technical tidbit
 
