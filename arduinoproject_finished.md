@@ -134,6 +134,8 @@ The program stores these four frequencies, and then the selected arpeggio patter
 
 ## code
 
+I mostly vibecoded this since it was relatively simple and tedious, the code itself is not hard to understand.
+
 [code](/arduino_project_code.zip)
 
 # technical tidbit
