@@ -134,7 +134,7 @@ The program stores these four frequencies, and then the selected arpeggio patter
 
 ## code
 
-[code](arduino_project_code.zip)
+[code](/arduino_project_code.zip)
 
 # technical tidbit
 
