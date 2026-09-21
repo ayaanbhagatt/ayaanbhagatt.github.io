@@ -63,7 +63,7 @@ I then gave the ultrasonic sensor the job of controlling how quickly the arpeggi
 A hand close to the sensor makes the notes play quickly, while moving farther away slows them down.
 
 <video controls width="700">
-  <source src="arduino-demo.mp4" type="video/mp4">
+  <source src="/arduino-demo.mp4" type="video/mp4">
 </video>
 
 
@@ -134,7 +134,7 @@ The program stores these four frequencies, and then the selected arpeggio patter
 
 ## code
 
-[download the code](arduino_project_code.zip)
+[code](arduino_project_code.zip)
 
 # technical tidbit
 
