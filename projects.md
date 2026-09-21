@@ -8,4 +8,6 @@ permalink: /projects/
 # projects
 
 ## [cardboard boxes]({{ '/projects/cardboard-boxes/' | relative_url }})
-click that please
+
+## [arduino arpeggios]({{ '/arduinoprojecto/' | relative_url }})
+
