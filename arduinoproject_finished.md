@@ -2,6 +2,8 @@
 layout: default
 permalink: /arduinoprojecto/
 ---
+{% include navigation.html %}
+{% include eye-background.html %}
 
 # arduino gesture controlled arpeggiator
 
