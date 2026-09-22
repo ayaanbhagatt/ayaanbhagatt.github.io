@@ -75,13 +75,11 @@ The rotary encoder was useful because one knob can scroll forward and backward t
 
 I created patterns such as:
 
-* Up: 1 → 2 → 3 → 4
-* Down: 4 → 3 → 2 → 1
-* Up/Down: 1 → 2 → 3 → 4 → 3 → 2
-* Outside-In: 1 → 4 → 2 → 3
+* Up
+* Down
 * Inside-Out: 2 → 3 → 1 → 4
-* Skip: 1 → 3 → 2 → 4
-* Random: random tones
+* Skip
+* Random
 
 Turning the encoder changes between these patterns.
 
@@ -103,33 +101,17 @@ For example:
 {0, 2, 4, 5, 7, 9, 11}
 ```
 
-represents C major:
-
-```text
-C D E F G A B
-```
-
-The program turns these values into actual frequencies using:
+represents C major, and program turns these values into actual frequencies using:
 
 ```cpp
 261.63 * pow(2.0, semitone / 12.0);
 ```
 
-261.63 Hz is middle C in this case.
+Every increase of 12 semitones doubles the frequency, which creates the same note one octave higher. To create a chord, the program takes every other note from the selected scale.
 
-Every increase of 12 semitones doubles the frequency, which creates the same note one octave higher.
+For C major, this creates a C major seventh chord.
 
-To create a chord, the program takes every other note from the selected scale.
-
-For C major, this creates:
-
-```text
-C → E → G → B
-```
-
-which is a C major seventh chord.
-
-The program stores these four frequencies, and then the selected arpeggio pattern determines what order they are played in.
+The program stores these four frequencies, and then the arpeggio pattern determines what order they are played in.
 
 
 ## code
@@ -183,17 +165,13 @@ Instead of needing to press many piano keys or guitar strings, someone could con
 
 To make my current prototype actually useful as an instrument, I would replace the piezo buzzers with proper audio output, possibly using MIDI or a synthesizer module.
 
-I would also add a display so the player could see:
-
-* the current scale
-* the current chord
-* the arpeggio pattern
-* the tempo
-
-instead of needing to use the Arduino Serial Monitor.
+I would also add a display so the player could see details of what they are playing instead of needing to use the Arduino Serial Monitor.
 
 The skill I would rely on most if I continued developing this project would debugging inputs.
 
 Most of my problems were physical sensors giving noisy or unexpected values.
 
 Learning to use the Serial Monitor, adjust thresholds and artificially smooth sensor readings helped me make responsive controls.
+
+
+Thanks for reading?
