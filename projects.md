@@ -11,3 +11,5 @@ permalink: /projects/
 
 ## [arduino arpeggios]({{ '/arduinoprojecto/' | relative_url }})
 
+## [simple spinning scanner]({{ '/spinning-scanner/' | relative_url }})
+
