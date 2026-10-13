@@ -13,7 +13,7 @@ For this project, I looked inside borough, the 3D city game (GTA clone) I made i
 
 ## reading the (difficult to decipher) code
 
-borough.s sets up the window, keyboard input, and timer. core.inc has movement and game rules, render.inc draws the scene, and data.inc holds graphics data, text and tables. Registers are small storage spaces inside the processor. w9 refers to the lower 32 bits of register x9, which holds 64 bits. This game generally uses x names for addresses and w names for whole numbers. Their roles change: w9 can hold cash in one routine and health in another. ADDR finds a memory address, ldr reads from it, and str saves to it. Brackets mean to access memory; # marks a constant number.
+borough.s sets up the window, keyboard input, and timer. core.inc has movement and game rules, render.inc draws the scene, and data.inc holds graphics data, text and tables. Registers are small storage spaces inside the processor. w9 refers to the lower 32 bits of register x9, which holds 64 bits. This game generally uses x names for addresses and w names for whole numbers. Their roles change, as w9 can hold cash in one routine and health in another. ADDR finds a memory address, ldr reads from it, and str saves to it. Brackets mean to access memory and # marks a constant number.
 
 ## the game window
 
@@ -75,7 +75,7 @@ b.eq Ldrive_reverse
 add w22, w22, #20
 ```
 
-w20 holds the keys and w22 holds speed. tst checks for W. If it is absent, b.eq skips the acceleration; otherwise add increases speed by 20 each update. The game uses speed and heading to calculate a proposed position, then checks it before saving.
+w20 holds the keys and w22 holds speed. tst checks for W. If it is absent, b.eq skips the acceleration, and otherwise add increases speed by 20 each update. The game uses speed and heading to calculate a proposed position, then checks it before saving.
 
 ## collisions and losing
 
@@ -96,7 +96,7 @@ Lclear: mov w0, #0
     ret
 ```
 
-cmp compares two values. b.lt jumps if the coordinate is below the lower boundary, and b.gt jumps if it is above the upper one. Either coordinate outside means clear; both inside means blocked. ret returns 0 or 1 to the driving routine. A blocked move triggers "cbnz w0, Ldrive_collision", so the new position is rejected. The car bounces back and loses six health when its damage cooldown allows it. _game_step also checks
+cmp compares two values. b.lt jumps if the coordinate is below the lower boundary, and b.gt jumps if it is above the upper one. Either coordinate outside means clear, and both inside means blocked. ret returns 0 or 1 to the driving routine. A blocked move triggers "cbnz w0, Ldrive_collision", so the new position is rejected. The car bounces back and loses six health when its damage cooldown allows it. _game_step also checks
 
 ```asm
 ldr w9, [x19, #ST_HEALTH]
@@ -105,7 +105,7 @@ b.gt Lstep_done
 bl _bust
 ```
 
-If health is above zero, b.gt skips _bust. Otherwise the player respawns in the starting car with 100 health, no heat, and a $200 penalty, with cash kept at zero or above. Police can also trigger _bust when capture reaches 120. There is no final victory screen; deliveries are repeatable successes.
+If health is above zero, b.gt skips _bust. Otherwise the player respawns in the starting car with 100 health, no heat, and a $200 penalty, with cash kept at zero or above. Police can also trigger _bust when capture reaches 120. There is no final victory screen since deliveries are repeatable and infinite kinda.
 
 ## deliveries and scoring
 
