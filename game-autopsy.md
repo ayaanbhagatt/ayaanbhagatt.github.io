@@ -141,6 +141,10 @@ add w9, w9, #500
 
 The prediction was $1,000 after one delivery from $500 starting cash, instead of $750. A controlled code test ran the actual assembly game loop at the delivery position. The original produced $750 and the changed version produced $1,000. This was a code test, not a manually played session. Both still required a car, advanced the marker once, and kept the $200 respawn penalty. Changing the number in add changed the reward while keeping the delivery rule the same.
 
+## presentations
+
+After seeing different people's presentations, especially the raw c of patrick peng's game or the new and unique twist of tetris that sam yang added, I am now thinking that maybe it would be best to change course on this project and use a language other then assembly to maybe make a similar game and fully(FULLY) understand how it works. That way I can actually make it fun and interesting rather than just being novel. My goal now is to make a simpler game in a language like python or c++ as a unique twist on an older game similar to patrick and sam.
+
 ## code
 
 The code was made by chatgpt-6.1 sol on extra high(highly recommend).
