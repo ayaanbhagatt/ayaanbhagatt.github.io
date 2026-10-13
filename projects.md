@@ -13,3 +13,4 @@ permalink: /projects/
 
 ## [simple spinning scanner]({{ '/spinning-scanner/' | relative_url }})
 
+## [assembly game autopsy]({{ '/game-autopsy/' | relative_url }})
