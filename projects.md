@@ -16,3 +16,5 @@ permalink: /projects/
 ## [assembly game autopsy]({{ '/game-autopsy/' | relative_url }})
 
 ## [arduino horror game]({{ '/arduino-horror-game/' | relative_url }})
+
+## [backpack design process]({{ '/backpack-design-process/' | relative_url }})
